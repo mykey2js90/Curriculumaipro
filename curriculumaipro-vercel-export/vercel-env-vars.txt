@@ -1,0 +1,27 @@
+ENVIRONMENT VARIABLES FOR VERCEL DEPLOYMENT
+===========================================
+Add each of these in: Vercel Dashboard → Your Project → Settings → Environment Variables
+
+REQUIRED:
+  DATABASE_URL              MySQL/PlanetScale/TiDB connection string
+                            e.g. mysql://user:pass@host:3306/curriculumaipro
+  JWT_SECRET                Random 32+ char string for signing session cookies
+  STRIPE_SECRET_KEY         Stripe secret key (sk_live_... or sk_test_...)
+  STRIPE_WEBHOOK_SECRET     From Stripe Dashboard → Webhooks → your endpoint
+  VITE_STRIPE_PUBLISHABLE_KEY  Stripe publishable key (pk_live_... or pk_test_...)
+
+AI / LLM (curriculum generation):
+  BUILT_IN_FORGE_API_URL    https://api.manus.im  (or your own LLM proxy)
+  BUILT_IN_FORGE_API_KEY    API key for the LLM service
+  VITE_FRONTEND_FORGE_API_URL   https://api.manus.im
+  VITE_FRONTEND_FORGE_API_KEY   Frontend-safe API key
+
+OAuth (Manus login):
+  VITE_APP_ID               Your Manus OAuth application ID
+  OAUTH_SERVER_URL          https://api.manus.im
+  VITE_OAUTH_PORTAL_URL     https://manus.im
+  OWNER_OPEN_ID             Your Manus user OpenID (gets admin role)
+  OWNER_NAME                Your display name
+
+Optional:
+  VITE_ADSENSE_PUBLISHER_ID ca-pub-xxxxxxxxxxxxxxxx  (Google AdSense)
