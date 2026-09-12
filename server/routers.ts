@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
@@ -8,6 +9,7 @@ import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import {
   createBlogPost,
   createSponsor,
+  countUserCurricula,
   deleteBlogPost,
   getBlogPostBySlug,
   getBlogPosts,
@@ -35,7 +37,7 @@ export const STRIPE_PRODUCTS = {
   pro_monthly: {
     name: "CurriculumAI Pro (Monthly)",
     priceId: process.env.STRIPE_PRICE_PRO_MONTHLY ?? "",
-    amount: 1900,
+    amount: 2999,
     interval: "month" as const,
   },
   pro_annual: {
@@ -141,6 +143,21 @@ export const appRouter = router({
         level: z.enum(["beginner", "intermediate", "advanced"]).default("intermediate"),
       }))
       .mutation(async ({ input, ctx }) => {
+        const curriculumCount = ctx.user.role === "admin" || ctx.user.subscriptionStatus === "active"
+          ? 0
+          : await countUserCurricula(ctx.user.id);
+        if (ctx.user.role !== "admin" && ctx.user.subscriptionStatus !== "active" && curriculumCount >= 1) {
+          throw new TRPCError({
+            code: "FORBIDDEN",
+            message: "Your free course has been used. Upgrade to Pro to generate more curricula.",
+          });
+        }
+        if (ctx.user.role !== "admin" && ctx.user.subscriptionStatus !== "active" && input.numModules > 8) {
+          throw new TRPCError({
+            code: "FORBIDDEN",
+            message: "The free course supports up to 8 modules. Upgrade to Pro for up to 20 modules.",
+          });
+        }
         const userPrompt = `Create a ${input.level} level course curriculum for: "${input.topic}".
 Include ${input.numModules} modules. Each module: moduleNumber, title, description, learningObjectives (3-5), estimatedDuration, topics (4-8).
 Top-level: courseTitle, courseDescription, targetAudience, prerequisites, totalDuration.

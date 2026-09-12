@@ -263,3 +263,13 @@ export async function getUserCurricula(userId: number) {
   if (!db) return [];
   return db.select().from(curricula).where(eq(curricula.userId, userId)).orderBy(desc(curricula.createdAt));
 }
+
+export async function countUserCurricula(userId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db
+    .select({ count: sql<number>`count(*)` })
+    .from(curricula)
+    .where(eq(curricula.userId, userId));
+  return Number(result[0]?.count ?? 0);
+}

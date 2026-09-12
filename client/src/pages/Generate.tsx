@@ -18,7 +18,13 @@ type CurriculumModule = { moduleNumber: number; title: string; description: stri
 type Curriculum = { courseTitle: string; courseDescription: string; targetAudience: string; prerequisites: string[]; totalDuration: string; modules: CurriculumModule[] };
 
 export default function Generate() {
-  const { isAuthenticated } = useAuth();
+  const { user, isAuthenticated } = useAuth();
+  const subscriptionQuery = trpc.stripe.subscriptionStatus.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
+  const historyQuery = trpc.curriculum.history.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
   const [topic, setTopic] = useState("");
   const [numModules, setNumModules] = useState(8);
   const [level, setLevel] = useState<"beginner" | "intermediate" | "advanced">("intermediate");
@@ -64,8 +70,34 @@ export default function Generate() {
           <div className="text-center max-w-md">
             <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
             <h1 className="text-2xl font-bold mb-2">Sign in to Generate Curricula</h1>
-            <p className="text-muted-foreground mb-6">Create a free account to start generating AI-powered course curricula.</p>
+            <p className="text-muted-foreground mb-6">Sign in to generate AI-powered course curricula.</p>
             <a href={getLoginUrl("/generate")}><Button size="lg">Sign In / Sign Up</Button></a>
+          </div>
+        </main><Footer />
+      </div>
+    );
+  }
+
+  if (subscriptionQuery.isLoading || historyQuery.isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col"><Navbar />
+        <main className="flex-1 flex items-center justify-center px-4">
+          <p className="text-muted-foreground">Checking your subscription...</p>
+        </main><Footer />
+      </div>
+    );
+  }
+
+  const hasUsedFreeCourse = (historyQuery.data?.length ?? 0) >= 1;
+  if (user?.role !== "admin" && subscriptionQuery.data?.status !== "active" && hasUsedFreeCourse) {
+    return (
+      <div className="min-h-screen flex flex-col"><Navbar />
+        <main className="flex-1 flex items-center justify-center px-4">
+          <div className="text-center max-w-md">
+            <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h1 className="text-2xl font-bold mb-2">Upgrade to Pro to Generate</h1>
+            <p className="text-muted-foreground mb-6">Your free course has been used. Upgrade to Pro to generate more curricula.</p>
+            <a href="https://buy.stripe.com/aFa6oA3rd5ODcDJ0895sA01" target="_blank" rel="noopener noreferrer"><Button size="lg">Upgrade to Pro</Button></a>
           </div>
         </main><Footer />
       </div>

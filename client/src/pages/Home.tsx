@@ -55,11 +55,10 @@ export default function Home() {
             {isAuthenticated ? (
               <Link href="/generate"><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Generate Curriculum</Button></Link>
             ) : (
-              <a href={getLoginUrl("/generate")}><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Get Started Free</Button></a>
+              <a href={getLoginUrl("/generate")}><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Generate Your Free Course</Button></a>
             )}
             <Link href="/blog"><Button size="lg" variant="outline" className="gap-2 text-base px-8"><BookOpen className="w-5 h-5" />Read the Blog</Button></Link>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">No credit card required. Free tier available.</p>
         </div>
       </section>
       <section className="py-20 bg-background">
@@ -101,16 +100,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">Simple, Transparent Pricing</h2>
-            <p className="text-muted-foreground">Start free. Upgrade when you need more.</p>
+            <p className="text-muted-foreground">Generate one course free, then upgrade for unlimited access.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <Card className="border border-border/60">
-              <CardHeader><CardTitle>Free</CardTitle><p className="text-3xl font-bold">$0<span className="text-base font-normal text-muted-foreground">/mo</span></p></CardHeader>
+              <CardHeader><CardTitle>Free</CardTitle><p className="text-3xl font-bold">$0<span className="text-base font-normal text-muted-foreground">/one course</span></p></CardHeader>
               <CardContent className="space-y-3">
-                {["3 curricula per month","Up to 8 modules","JSON export","Email support"].map((f) => (
+                {["1 curriculum total","Up to 8 modules","JSON export","Email support"].map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" />{f}</div>
                 ))}
-                <a href={getLoginUrl("/generate")} className="block mt-4"><Button variant="outline" className="w-full">Get Started</Button></a>
+                <a href={getLoginUrl("/generate")} className="block mt-4"><Button variant="outline" className="w-full">Generate Free Course</Button></a>
               </CardContent>
             </Card>
             <Card className="border-2 border-primary relative">
