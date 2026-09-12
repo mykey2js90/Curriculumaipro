@@ -14,8 +14,27 @@ import { BookOpen, CheckCircle, Clock, Download, Loader2, Sparkles } from "lucid
 import { useState } from "react";
 import { toast } from "sonner";
 
-type CurriculumModule = { moduleNumber: number; title: string; description: string; learningObjectives: string[]; estimatedDuration: string; topics: string[] };
-type Curriculum = { courseTitle: string; courseDescription: string; targetAudience: string; prerequisites: string[]; totalDuration: string; modules: CurriculumModule[] };
+type Resource = { title: string; resourceType: string; authorOrPublisher?: string; source?: string; searchQuery: string; verifiedUrl?: string };
+type InstructorSupport = {
+  teachingObjectives: string[];
+  teachingNotes: string[];
+  recommendedActivities: string[];
+  assessmentPlan: string;
+  teachingResources: Resource[];
+  videoLessonScript: { opening: string; demonstrationSteps: string[]; discussionPrompts: string[]; closing: string };
+};
+type CurriculumModule = {
+  moduleNumber: number;
+  title: string;
+  description: string;
+  learningObjectives: string[];
+  estimatedDuration: string;
+  topics: string[];
+  readingResources: Resource[];
+  videoResources: Resource[];
+  instructorSupport?: InstructorSupport;
+};
+type Curriculum = { courseTitle: string; courseDescription: string; targetAudience: string; prerequisites: string[]; totalDuration: string; learningApproach: string; modules: CurriculumModule[] };
 
 export default function Generate() {
   const { user, isAuthenticated } = useAuth();
@@ -163,6 +182,7 @@ export default function Generate() {
                       <div className="flex items-center gap-1.5 text-muted-foreground"><Clock className="w-4 h-4" />{curriculum.totalDuration}</div>
                       <div className="flex items-center gap-1.5 text-muted-foreground"><BookOpen className="w-4 h-4" />{curriculum.modules.length} modules</div>
                     </div>
+                    {curriculum.learningApproach && <p className="text-sm text-muted-foreground mt-3">{curriculum.learningApproach}</p>}
                     {curriculum.prerequisites.length > 0 && (
                       <div className="mt-3">
                         <p className="text-xs font-medium text-muted-foreground mb-1">Prerequisites</p>
@@ -187,10 +207,56 @@ export default function Generate() {
                             <p className="text-xs font-semibold mb-2">Learning Objectives</p>
                             <ul className="space-y-1">{mod.learningObjectives.map((o, i) => <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground"><CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 shrink-0" />{o}</li>)}</ul>
                           </div>
-                          <div>
+                          <div className="space-y-4">
                             <p className="text-xs font-semibold mb-2">Topics</p>
                             <div className="flex flex-wrap gap-1">{mod.topics.map((t) => <Badge key={t} variant="outline" className="text-xs">{t}</Badge>)}</div>
                             <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{mod.estimatedDuration}</p>
+                            <div>
+                              <p className="text-xs font-semibold mb-2">Reading Resources</p>
+                              <ul className="space-y-1">
+                                {mod.readingResources?.map((resource, i) => (
+                                  <li key={i} className="text-xs text-muted-foreground">
+                                    {resource.verifiedUrl ? <a className="text-primary underline" href={resource.verifiedUrl} target="_blank" rel="noopener noreferrer">{resource.title}</a> : resource.title}
+                                    {resource.authorOrPublisher ? ` - ${resource.authorOrPublisher}` : ""}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="space-y-4">
+                            <div>
+                              <p className="text-xs font-semibold mb-2">Video Resources</p>
+                              <ul className="space-y-1">
+                                {mod.videoResources?.map((resource, i) => {
+                                  const href = resource.verifiedUrl ?? `https://www.youtube.com/results?search_query=${encodeURIComponent(resource.searchQuery)}`;
+                                  return <li key={i} className="text-xs"><a className="text-primary underline" href={href} target="_blank" rel="noopener noreferrer">{resource.title}</a><span className="text-muted-foreground"> - {resource.source ?? resource.resourceType}</span></li>;
+                                })}
+                              </ul>
+                            </div>
+                            {mod.instructorSupport && (
+                              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 space-y-3">
+                                <p className="text-xs font-semibold">Pro Instructor Track</p>
+                                <p className="text-xs text-muted-foreground">{mod.instructorSupport.assessmentPlan}</p>
+                                <div>
+                                  <p className="text-xs font-semibold mb-1">Recommended Activities</p>
+                                  <ul className="list-disc pl-4 space-y-1">{mod.instructorSupport.recommendedActivities.map((activity, i) => <li key={i} className="text-xs text-muted-foreground">{activity}</li>)}</ul>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-semibold mb-1">Teaching Notes</p>
+                                  <ul className="list-disc pl-4 space-y-1">{mod.instructorSupport.teachingNotes.map((note, i) => <li key={i} className="text-xs text-muted-foreground">{note}</li>)}</ul>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-semibold mb-1">Teaching Resources</p>
+                                  <ul className="space-y-1">{mod.instructorSupport.teachingResources.map((resource, i) => <li key={i} className="text-xs text-muted-foreground">{resource.title}{resource.authorOrPublisher ? ` - ${resource.authorOrPublisher}` : ""}</li>)}</ul>
+                                </div>
+                                <div>
+                                  <p className="text-xs font-semibold mb-1">Video Lesson Script</p>
+                                  <p className="text-xs text-muted-foreground">{mod.instructorSupport.videoLessonScript.opening}</p>
+                                  <ol className="list-decimal pl-4 space-y-1">{mod.instructorSupport.videoLessonScript.demonstrationSteps.map((step, i) => <li key={i} className="text-xs text-muted-foreground">{step}</li>)}</ol>
+                                  <p className="text-xs text-muted-foreground mt-2">{mod.instructorSupport.videoLessonScript.closing}</p>
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </CardContent>

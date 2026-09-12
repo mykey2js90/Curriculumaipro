@@ -158,13 +158,18 @@ export const appRouter = router({
             message: "The free course supports up to 8 modules. Upgrade to Pro for up to 20 modules.",
           });
         }
+        const isPro = ctx.user.role === "admin" || ctx.user.subscriptionStatus === "active";
+        const instructorRequirements = isPro
+          ? `Also include instructorSupport for every module with teachingObjectives, teachingNotes, recommendedActivities, assessmentPlan, teachingResources, and a videoLessonScript containing an opening, demonstrationSteps, discussionPrompts, and closing.`
+          : `Do not include instructorSupport.`;
         const userPrompt = `Create a ${input.level} level course curriculum for: "${input.topic}".
-Include ${input.numModules} modules. Each module: moduleNumber, title, description, learningObjectives (3-5), estimatedDuration, topics (4-8).
-Top-level: courseTitle, courseDescription, targetAudience, prerequisites, totalDuration.
+Include ${input.numModules} modules. Each module must include moduleNumber, title, description, learningObjectives (3-5), estimatedDuration, topics (4-8), readingResources (2-4 resources with title, resourceType, authorOrPublisher, searchQuery, and optional verifiedUrl), and videoResources (2-4 resources with title, resourceType, source, searchQuery, and optional verifiedUrl). Prefer authoritative sources and never invent a URL; use a searchQuery when you cannot verify a URL.
+Top-level: courseTitle, courseDescription, targetAudience, prerequisites, totalDuration, learningApproach.
+${instructorRequirements}
 Respond ONLY with valid JSON.`;
         const response = await invokeLLM({
           messages: [
-            { role: "system" as const, content: "You are an expert instructional designer. Generate structured course curricula in JSON." } as Message,
+            { role: "system" as const, content: "You are an expert instructional designer and teacher educator. Generate structured, evidence-informed course curricula in JSON. Separate learner resources from instructor guidance." } as Message,
             { role: "user" as const, content: userPrompt } as Message,
           ],
           response_format: { type: "json_object" },
