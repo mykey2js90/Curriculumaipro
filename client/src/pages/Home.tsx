@@ -55,7 +55,7 @@ export default function Home() {
             {isAuthenticated ? (
               <Link href="/generate"><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Generate Curriculum</Button></Link>
             ) : (
-              <a href={getLoginUrl("/generate")}><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Generate Your Free Course</Button></a>
+              <a href="https://buy.stripe.com/aFa6oA3rd5ODcDJ0895sA01" target="_blank" rel="noopener noreferrer"><Button size="lg" className="gap-2 text-base px-8"><Zap className="w-5 h-5" />Start Free Trial</Button></a>
             )}
             <Link href="/blog"><Button size="lg" variant="outline" className="gap-2 text-base px-8"><BookOpen className="w-5 h-5" />Read the Blog</Button></Link>
           </div>
@@ -109,7 +109,7 @@ export default function Home() {
                 {["1 curriculum total","Up to 8 modules","JSON export","Email support"].map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" />{f}</div>
                 ))}
-                <a href={getLoginUrl("/generate")} className="block mt-4"><Button variant="outline" className="w-full">Generate Free Course</Button></a>
+                <a href="https://buy.stripe.com/aFa6oA3rd5ODcDJ0895sA01" target="_blank" rel="noopener noreferrer" className="block mt-4"><Button variant="outline" className="w-full">Start Free Trial</Button></a>
               </CardContent>
             </Card>
             <Card className="border-2 border-primary relative">
