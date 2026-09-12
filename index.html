@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free AI Curriculum Blueprint | CurriculumAI</title>
+  <meta name="description" content="Download the free AI Curriculum Blueprint for Educators, Instructional Designers, and Course Creators. Architect accredited, high-impact curricula in minutes.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            },
+            accent: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.18) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 80%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .glass-dark {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="landing_page.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/25 group-hover:scale-105 transition-transform duration-200">
+          <i data-lucide="sparkles" class="w-6 h-6 text-amber-300"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-slate-950 flex items-center gap-1.5">
+            Curriculum<span class="text-brand-600">AI</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full border border-brand-200">Toolkit</span>
+          </span>
+          <span class="text-xs text-slate-500 font-medium">Empowering Next-Gen Educators</span>
+        </div>
+      </a>
+
+      <!-- Right Nav Links -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <a href="https://www.curriculumaipro.com" target="_blank" rel="noopener noreferrer" 
+           class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors py-2 px-3 rounded-lg hover:bg-slate-100">
+          <span>Platform Overview</span>
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+        </a>
+        <a href="#download-form" 
+           class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-brand-600 shadow-sm hover:shadow-md hover:shadow-brand-500/20 transition-all duration-200">
+          <span>Get Free Blueprint</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Background Glow -->
+  <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden gradient-glow">
+    <!-- Subtle Grid Pattern -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f01a_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f01a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Copy & Value Proposition -->
+        <div class="lg:col-span-7 space-y-8">
+          <!-- Tag / Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-200/80 text-brand-700 text-xs sm:text-sm font-semibold shadow-sm">
+            <span class="flex h-2 w-2 rounded-full bg-accent-500 animate-ping"></span>
+            <span class="flex h-2 w-2 rounded-full bg-accent-500 -ml-4"></span>
+            <span>Free Comprehensive 2026 Toolkit for Educators &amp; Course Creators</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
+            Build Accredited, High-Impact Curricula in <span class="bg-gradient-to-r from-brand-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent">Minutes</span> — Not Months.
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl font-normal">
+            Eliminate weeks of blank-page paralysis. Get the exact prompt architecture, pedagogical frameworks, and Bloom's Revised Taxonomy matrices used by top faculty and instructional designers worldwide.
+          </p>
+
+          <!-- Key Benefit Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 stroke-[2.5]"></i>
+              </div>
+              <span class="text-sm font-medium text-slate-700"><strong>50+ Tested Prompts</strong> for syllabi, modules &amp; assessments</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 stroke-[2.5]"></i>
+              </div>
+              <span class="text-sm font-medium text-slate-700"><strong>Bloom's Taxonomy</strong> cognitive alignment matrices</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 stroke-[2.5]"></i>
+              </div>
+              <span class="text-sm font-medium text-slate-700"><strong>Accreditation Ready</strong> for Higher Ed, K-12 &amp; Corporate L&amp;D</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4 stroke-[2.5]"></i>
+              </div>
+              <span class="text-sm font-medium text-slate-700"><strong>Universal LMS Ready</strong> (Canvas, Blackboard, Moodle)</span>
+            </div>
+          </div>
+
+          <!-- Social Proof Quick Counters -->
+          <div class="pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-6 text-slate-600">
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-2 overflow-hidden">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Educator">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Educator">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="Educator">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Educator">
+              </div>
+              <div class="text-xs">
+                <div class="font-bold text-slate-900">14,200+ Educators</div>
+                <div class="text-slate-500">Adopted in Fall 2026</div>
+              </div>
+            </div>
+            <div class="h-8 w-px bg-slate-200 hidden sm:block"></div>
+            <div class="flex items-center gap-1.5 text-xs text-slate-600">
+              <div class="flex text-amber-400">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <span class="font-bold text-slate-900">4.9/5</span>
+              <span class="text-slate-500">(1,840+ reviews)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Opt-In Lead Generation Card -->
+        <div class="lg:col-span-5" id="download-form">
+          <div class="relative">
+            <!-- Decorative blur background behind card -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-indigo-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+            
+            <div class="relative bg-white rounded-2xl shadow-xl shadow-slate-200/70 border border-slate-200 p-6 sm:p-8">
+              
+              <div class="flex items-center justify-between mb-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i> Instant PDF Download
+                </span>
+                <span class="text-xs font-medium text-slate-500">100% Free Forever</span>
+              </div>
+
+              <h2 class="text-2xl font-bold text-slate-950 tracking-tight">Get Your Free Blueprint</h2>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1 mb-6">
+                Receive the 42-page handbook, prompt cheat sheet, and Bloom's alignment matrix straight to your inbox.
+              </p>
+
+              <!-- Opt-In Form -->
+              <form id="leadForm" class="space-y-4">
+                <div>
+                  <label for="firstName" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">First Name <span class="text-rose-500">*</span></label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                      <i data-lucide="user" class="w-4 h-4"></i>
+                    </div>
+                    <input type="text" id="firstName" name="firstName" required placeholder="Dr. Jane or Alex"
+                           class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">Institutional or Work Email <span class="text-rose-500">*</span></label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                      <i data-lucide="mail" class="w-4 h-4"></i>
+                    </div>
+                    <input type="email" id="email" name="email" required placeholder="prof.name@university.edu"
+                           class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="primaryRole" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">Primary Role <span class="text-rose-500">*</span></label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                      <i data-lucide="briefcase" class="w-4 h-4"></i>
+                    </div>
+                    <select id="primaryRole" name="primaryRole" required
+                            class="w-full pl-10 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent appearance-none transition-all cursor-pointer">
+                      <option value="" disabled selected>Select your current role</option>
+                      <option value="Higher Ed Faculty">Higher Ed Faculty / Professor</option>
+                      <option value="Instructional Designer">Instructional Designer / Curriculum Specialist</option>
+                      <option value="K-12 Teacher">K-12 Teacher / Department Lead</option>
+                      <option value="Corporate L&D">Corporate L&D / Training Leader</option>
+                      <option value="Online Course Creator">Online Course Creator / Edupreneur</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+                      <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submitBtn"
+                        class="w-full mt-2 py-3.5 px-6 rounded-xl font-bold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 focus:ring-4 focus:ring-brand-500/25 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/40 transform active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group">
+                  <span id="btnText">Download Free AI Curriculum Blueprint</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" id="btnIcon"></i>
+                  <svg id="btnSpinner" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Trust guarantee -->
+              <div class="mt-4 text-center">
+                <p class="text-[11px] text-slate-400 flex items-center justify-center gap-1.5">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i>
+                  <span>Zero spam guaranteed. Unsubscribe at any time. We respect academic privacy.</span>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Visual Preview Card / Mock-up Section -->
+  <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_50%)]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-400 bg-brand-950/80 border border-brand-800 px-3 py-1 rounded-full">Visual Preview</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-3 text-white">Peek Inside the Blueprint Framework</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Designed by curriculum architects, formatted for immediate plug-and-play execution in your favorite AI environment.</p>
+      </div>
+
+      <!-- Preview Window Container -->
+      <div class="max-w-5xl mx-auto bg-slate-800/90 rounded-2xl border border-slate-700 shadow-2xl overflow-hidden backdrop-blur-xl">
+        <!-- Window Chrome Topbar -->
+        <div class="bg-slate-950/90 px-4 py-3 border-b border-slate-700/80 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="text-xs font-mono text-slate-400 ml-3 hidden sm:inline">curriculumai_blueprint_v4.2.pdf — Read Only</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded border border-slate-600 font-mono">42 Pages</span>
+            <span class="text-xs bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800 font-semibold">PDF + Markdown</span>
+          </div>
+        </div>
+
+        <!-- Preview Body Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-slate-700">
+          <!-- Sidebar navigation of modules -->
+          <div class="md:col-span-4 p-5 bg-slate-900/60 space-y-2">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-3 px-2">Blueprint Modules</div>
+            
+            <button class="w-full text-left p-3 rounded-xl bg-brand-600/20 border border-brand-500/40 text-white flex items-center justify-between group">
+              <div>
+                <div class="text-xs font-bold text-brand-300">Module 01</div>
+                <div class="text-sm font-semibold">Backward Design Prompt Matrix</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-brand-400"></i>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl hover:bg-slate-800/60 border border-transparent text-slate-300 flex items-center justify-between group transition-colors">
+              <div>
+                <div class="text-xs font-bold text-slate-400">Module 02</div>
+                <div class="text-sm font-semibold">Bloom's Revised Taxonomy Engine</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300"></i>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl hover:bg-slate-800/60 border border-transparent text-slate-300 flex items-center justify-between group transition-colors">
+              <div>
+                <div class="text-xs font-bold text-slate-400">Module 03</div>
+                <div class="text-sm font-semibold">50+ Modular System Prompts</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300"></i>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl hover:bg-slate-800/60 border border-transparent text-slate-300 flex items-center justify-between group transition-colors">
+              <div>
+                <div class="text-xs font-bold text-slate-400">Module 04</div>
+                <div class="text-sm font-semibold">Accreditation &amp; Rubric Protocol</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-slate-300"></i>
+            </button>
+          </div>
+
+          <!-- Document Content Sample Preview -->
+          <div class="md:col-span-8 p-6 sm:p-8 bg-slate-900/90">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                  <i data-lucide="terminal" class="w-3.5 h-3.5"></i> PROMPT TEMPLATE // COURSE_OUTCOME_ARCHITECT
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">v4.2 Verified</span>
+              </div>
+
+              <!-- Code/Prompt snippet box -->
+              <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs font-mono text-slate-300 leading-relaxed overflow-x-auto">
+                <p class="text-brand-400 font-semibold mb-2"># SYSTEM ROLE: Elite Higher-Education Curriculum Architect</p>
+                <p class="text-slate-300"><span class="text-amber-400 font-bold">&lt;context&gt;</span> Act as a Lead Instructional Designer aligning with the Wiggins &amp; McTighe Backward Design Framework.<span class="text-amber-400 font-bold">&lt;/context&gt;</span></p>
+                <p class="text-slate-300 mt-2"><span class="text-indigo-400 font-bold">&lt;task&gt;</span> Generate a 15-week modular syllabus breakdown where each week explicitly links: (1) Measurable Objective [Bloom Level 4-6], (2) Authentic Assessment Artifact, (3) Scaffolding Reading, and (4) Formative Feedback Loop.<span class="text-indigo-400 font-bold">&lt;/task&gt;</span></p>
+                <p class="text-slate-400 mt-2">// Includes parameter injection for student cohort level, credit hours, &amp; industry accreditation guidelines...</p>
+              </div>
+
+              <!-- Preview highlights checklist -->
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                  <div class="text-xs text-slate-400 font-medium">Accreditation Match</div>
+                  <div class="text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i> ABET, AACSB, HLC Ready
+                  </div>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700/60">
+                  <div class="text-xs text-slate-400 font-medium">Cognitive Depth</div>
+                  <div class="text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
+                    <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i> Analyze, Evaluate, Create
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs text-slate-400 pt-2">
+                <span>Included in the full PDF package: 42 pages, 14 editable tables, 50+ modular prompts.</span>
+                <a href="#download-form" class="text-brand-400 hover:text-brand-300 font-semibold underline underline-offset-2">Download All Modules &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- What's Inside: 4 Core Components -->
+  <section class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-600 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">Core Components</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mt-3">What's Inside Your Free Blueprint</h2>
+        <p class="text-slate-600 mt-3 text-base sm:text-lg">Every element has been battle-tested across hundreds of academic courses and corporate training curricula.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Component 1 -->
+        <div class="glass-card p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-slate-200 group">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 text-brand-600 flex items-center justify-center mb-5 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-200">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold text-brand-600 uppercase tracking-wider mb-1">Component 01</span>
+          <h3 class="text-lg font-bold text-slate-950 mb-2">Backward Design Architecture</h3>
+          <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+            A step-by-step master methodology bridging overarching program learning outcomes (PLOs) directly down to weekly measurable objectives and formative feedback loops.
+          </p>
+          <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-1.5">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Course scoping canvas</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Constructive alignment tables</li>
+          </ul>
+        </div>
+
+        <!-- Component 2 -->
+        <div class="glass-card p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-slate-200 group">
+          <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-200">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider mb-1">Component 02</span>
+          <h3 class="text-lg font-bold text-slate-950 mb-2">50+ Academic System Prompts</h3>
+          <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+            Plug-and-play prompts crafted specifically for complex academic topics. Includes negative constraints that block hallucinations, generic filler, and clichéd textbook speak.
+          </p>
+          <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-1.5">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Syllabus generator scripts</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Socratic discussion starters</li>
+          </ul>
+        </div>
+
+        <!-- Component 3 -->
+        <div class="glass-card p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-slate-200 group">
+          <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-200 text-violet-600 flex items-center justify-center mb-5 group-hover:bg-violet-600 group-hover:text-white transition-colors duration-200">
+            <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold text-violet-600 uppercase tracking-wider mb-1">Component 03</span>
+          <h3 class="text-lg font-bold text-slate-950 mb-2">Bloom's Taxonomy AI Engine</h3>
+          <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+            Cognitive level mapping matrices that ensure your course doesn't stay trapped in low-level recall. Push students into authentic synthesis, critique, and project creation.
+          </p>
+          <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-1.5">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Action verb prompt taxonomy</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Higher-order thinking checks</li>
+          </ul>
+        </div>
+
+        <!-- Component 4 -->
+        <div class="glass-card p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col border border-slate-200 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-200">
+            <i data-lucide="clipboard-check" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">Component 04</span>
+          <h3 class="text-lg font-bold text-slate-950 mb-2">Accreditation &amp; Rubric Suite</h3>
+          <p class="text-sm text-slate-600 leading-relaxed flex-grow">
+            Comprehensive evaluation formulas to create standardized, transparent 4-tier grading rubrics, peer critique guidelines, and competency documentation.
+          </p>
+          <ul class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-1.5">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> 4-tier rubric templates</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i> Institutional audit checklist</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Quick CTA reminder under grid -->
+      <div class="mt-12 text-center">
+        <a href="#download-form" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 bg-brand-50 hover:bg-brand-100/80 px-6 py-3 rounded-xl border border-brand-200 transition-colors">
+          <span>Get all 4 modules in the free download package</span>
+          <i data-lucide="arrow-up" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Social Proof -->
+  <section class="py-20 bg-slate-50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-slate-500 bg-slate-200/80 border border-slate-300 px-3 py-1 rounded-full">Trusted Worldwide</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mt-3">What Faculty &amp; Designers Are Saying</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Used in universities, community colleges, enterprise training academies, and bootcamps.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1: Higher Ed -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed italic">
+              "Developing a new upper-division curriculum used to take our department committee an entire academic semester. With the Backward Design prompts in this Blueprint, we drafted a fully accredited 16-week syllabus in one afternoon. Our dean was blown away."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-6 mt-6 border-t border-slate-100">
+            <img class="w-11 h-11 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Dr. Aris Thorne">
+            <div>
+              <div class="text-sm font-bold text-slate-950">Dr. Aris Thorne</div>
+              <div class="text-xs text-slate-500">Associate Dean of Engineering, State University</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: Corporate L&D -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed italic">
+              "The Bloom's Taxonomy AI engine completely changed how we evaluate engineering onboarding. Instead of passive multiple choice, our prompts generate authentic problem-solving simulations. Outstanding resource."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-6 mt-6 border-t border-slate-100">
+            <img class="w-11 h-11 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance">
+            <div>
+              <div class="text-sm font-bold text-slate-950">Marcus Vance</div>
+              <div class="text-xs text-slate-500">VP of Global Learning &amp; Dev, CloudTech Corp</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: Online Course Creator -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed italic">
+              "I have over 85,000 paid students on my platform. Keeping courses updated with modern industry tooling used to be my biggest headache. This blueprint gave me the exact architecture to restructure 8 courses in 2 weeks."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-6 mt-6 border-t border-slate-100">
+            <img class="w-11 h-11 rounded-full object-cover ring-2 ring-slate-100" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Elena Morales">
+            <div>
+              <div class="text-sm font-bold text-slate-950">Elena Morales</div>
+              <div class="text-xs text-slate-500">Founder of DataMasters Academy</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section (Clean Accordion) -->
+  <section class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-14">
+        <span class="text-xs uppercase tracking-widest font-bold text-brand-600 bg-brand-50 border border-brand-200 px-3 py-1 rounded-full">Common Questions</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mt-3">Frequently Asked Questions</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Everything you need to know about the blueprint and how to use it.</p>
+      </div>
+
+      <!-- Accordion Items -->
+      <div class="space-y-4" id="faqAccordion">
+        
+        <!-- FAQ 1 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden transition-all bg-slate-50/50">
+          <button class="faq-btn w-full p-5 text-left flex items-center justify-between font-bold text-slate-900 hover:text-brand-600 transition-colors focus:outline-none" aria-expanded="false">
+            <span class="text-base">Who is this blueprint specifically designed for?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            This blueprint was designed specifically for higher education faculty, K-12 department leads, instructional designers, university curriculum committees, corporate training directors, and professional online course creators who need rigorous, pedagogically sound curricula without spending months on repetitive drafting.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden transition-all bg-slate-50/50">
+          <button class="faq-btn w-full p-5 text-left flex items-center justify-between font-bold text-slate-900 hover:text-brand-600 transition-colors focus:outline-none" aria-expanded="false">
+            <span class="text-base">Do I need technical skills or prompt engineering experience?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Not at all. Every prompt inside is pre-engineered with simple slot-filling brackets like <code class="bg-slate-200 px-1 py-0.5 rounded text-xs">[Course Level]</code> and <code class="bg-slate-200 px-1 py-0.5 rounded text-xs">[Target Outcome]</code>. You simply copy and paste into your model of choice or use them inside CurriculumAI's automation platform.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden transition-all bg-slate-50/50">
+          <button class="faq-btn w-full p-5 text-left flex items-center justify-between font-bold text-slate-900 hover:text-brand-600 transition-colors focus:outline-none" aria-expanded="false">
+            <span class="text-base">Does this work with ChatGPT, Claude, and Gemini?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Yes! The prompts use universal system-role structuring, Markdown output requirements, and XML parameter tagging. They function with high fidelity across ChatGPT (GPT-4o), Claude 3.5 Sonnet, Gemini 1.5 Pro, and local LLMs.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden transition-all bg-slate-50/50">
+          <button class="faq-btn w-full p-5 text-left flex items-center justify-between font-bold text-slate-900 hover:text-brand-600 transition-colors focus:outline-none" aria-expanded="false">
+            <span class="text-base">Is this really 100% free? What's the catch?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Yes, it is 100% free with no credit card required. We created this blueprint to empower educators and showcase the power of structured pedagogical AI. If you love the framework and later want to automate the entire process into full courses with 1-click LMS export, we'd love for you to check out our web platform at <a href="https://www.curriculumaipro.com" class="text-brand-600 underline font-semibold" target="_blank" rel="noopener">curriculumaipro.com</a>.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden transition-all bg-slate-50/50">
+          <button class="faq-btn w-full p-5 text-left flex items-center justify-between font-bold text-slate-900 hover:text-brand-600 transition-colors focus:outline-none" aria-expanded="false">
+            <span class="text-base">How does this ensure academic integrity and accreditation standards?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 pt-3">
+            Module 04 includes institutional review compliance guidelines. It provides negative constraints that prevent superficial AI outputs and includes audit matrices aligned with ABET, AACSB, and regional accreditation criteria.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Secondary Bottom CTA Banner -->
+  <section class="py-16 sm:py-20 bg-gradient-to-tr from-slate-950 via-slate-900 to-brand-950 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.25),transparent_60%)]"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-900/60 border border-brand-700/60 text-brand-300 text-xs font-semibold mb-6">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i>
+        <span>Join 14,200+ Forward-Thinking Educators</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        Ready to Build Your Next Course in Record Time?
+      </h2>
+      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8 font-normal">
+        Download the blueprint right now. You'll receive instant access to the PDF handbook, editable prompt cheat sheets, and evaluation rubrics.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#download-form" 
+           class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-950 bg-white hover:bg-slate-100 shadow-xl shadow-brand-500/20 hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2">
+          <span>Download Free AI Blueprint</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="https://www.curriculumaipro.com" target="_blank" rel="noopener noreferrer"
+           class="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:text-white transition-all duration-200 flex items-center justify-center gap-2">
+          <span>Explore CurriculumAI Platform</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <p class="text-xs text-slate-400 mt-6 flex items-center justify-center gap-2">
+        <i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span>Instant access &bull; No credit card required &bull; 100% Free download</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Cohesive Footer -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 py-12 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Brand col -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+              <i data-lucide="sparkles" class="w-5 h-5 text-amber-300"></i>
+            </div>
+            <span class="text-lg font-bold text-white tracking-tight">Curriculum<span class="text-brand-400">AI</span></span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            The next-generation curriculum intelligence suite. Empowering professors, instructional designers, and educational leaders to design accredited, high-engagement learning paths.
+          </p>
+          <div class="text-xs text-slate-500">
+            Visit official platform: <a href="https://www.curriculumaipro.com" class="text-brand-400 hover:text-brand-300 font-medium underline" target="_blank" rel="noopener">curriculumaipro.com</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="text-xs font-bold text-white uppercase tracking-wider mb-3">Blueprint Resources</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#download-form" class="hover:text-white transition-colors">Download Blueprint</a></li>
+            <li><a href="#download-form" class="hover:text-white transition-colors">Bloom's Taxonomy Matrix</a></li>
+            <li><a href="#download-form" class="hover:text-white transition-colors">50+ Academic Prompts</a></li>
+            <li><a href="#download-form" class="hover:text-white transition-colors">Rubric Builder Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- CurriculumAI Platform -->
+        <div>
+          <div class="text-xs font-bold text-white uppercase tracking-wider mb-3">CurriculumAI Web</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://www.curriculumaipro.com" target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-1">Web Platform <i data-lucide="external-link" class="w-3 h-3"></i></a></li>
+            <li><a href="https://www.curriculumaipro.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">Curriculum Generator</a></li>
+            <li><a href="https://www.curriculumaipro.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">LMS Canvas Export</a></li>
+            <li><a href="https://www.curriculumaipro.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">Institutional Pricing</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          &copy; 2026 CurriculumAI. All rights reserved. Designed for educators worldwide.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Academic Ethics</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Form Handling and Accordion Script -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+
+        // Close all other FAQs
+        document.querySelectorAll('.faq-btn').forEach(otherBtn => {
+          if (otherBtn !== button) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+            otherBtn.nextElementSibling.classList.add('hidden');
+            const otherIcon = otherBtn.querySelector('svg');
+            if (otherIcon) otherIcon.classList.remove('rotate-180');
+          }
+        });
+
+        // Toggle current
+        button.setAttribute('aria-expanded', !isExpanded);
+        if (isExpanded) {
+          content.classList.add('hidden');
+          if (icon) icon.classList.remove('rotate-180');
+        } else {
+          content.classList.remove('hidden');
+          if (icon) icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Form Submission Handling
+    const leadForm = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const btnSpinner = document.getElementById('btnSpinner');
+
+    if (leadForm) {
+      leadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Collect form data
+        const firstName = document.getElementById('firstName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const primaryRole = document.getElementById('primaryRole').value;
+
+        if (!firstName || !email || !primaryRole) {
+          alert('Please fill out all required fields.');
+          return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Generating Your Access...';
+        btnIcon.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+
+        const leadData = {
+          firstName: firstName,
+          email: email,
+          primaryRole: primaryRole,
+          timestamp: new Date().toISOString(),
+          source: 'CurriculumAI Free Blueprint Landing Page'
+        };
+
+        // OPTIONAL: Paste your Google Apps Script Web App URL below to automatically stream leads into Google Sheets
+        const SCRIPT_URL = ''; 
+
+        // Save lead data locally
+        try {
+          localStorage.setItem('curriculumai_lead', JSON.stringify(leadData));
+        } catch (err) {
+          console.warn('Could not save to localStorage:', err);
+        }
+
+        if (SCRIPT_URL && SCRIPT_URL.trim().startsWith('http')) {
+          fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(leadData)
+          }).then(function() {
+            window.location.href = 'thank_you.html';
+          }).catch(function(err) {
+            console.error('Webhook error:', err);
+            window.location.href = 'thank_you.html';
+          });
+        } else {
+          setTimeout(function() {
+            window.location.href = 'thank_you.html';
+          }, 800);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
