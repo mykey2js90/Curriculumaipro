@@ -115,12 +115,12 @@ export default function Home() {
             </Card>
             <Card className="border-2 border-primary relative">
               <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</Badge>
-              <CardHeader><CardTitle>Pro</CardTitle><p className="text-3xl font-bold">$19<span className="text-base font-normal text-muted-foreground">/mo</span></p></CardHeader>
+              <CardHeader><CardTitle>Pro</CardTitle><p className="text-3xl font-bold">$29.99<span className="text-base font-normal text-muted-foreground">/mo</span></p></CardHeader>
               <CardContent className="space-y-3">
                 {["Unlimited curricula","Up to 20 modules","JSON + CSV export","Priority support","Advanced AI models","Curriculum history"].map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" />{f}</div>
                 ))}
-                <a href={getLoginUrl("/generate")} className="block mt-4"><Button className="w-full">Start Pro Trial</Button></a>
+                <a href="https://buy.stripe.com/aFa6oA3rd5ODcDJ0895sA01" target="_blank" rel="noopener noreferrer" className="block mt-4"><Button className="w-full">Upgrade to Pro</Button></a>
               </CardContent>
             </Card>
           </div>
