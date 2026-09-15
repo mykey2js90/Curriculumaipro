@@ -9,6 +9,28 @@ function getQueryParam(req: Request, key: string): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+/**
+ * Decode the OAuth state parameter.
+ *
+ * The frontend encodes state in one of two shapes:
+ *   - btoa(redirectUri)                                — no returnPath
+ *   - btoa(JSON.stringify({ redirectUri, returnPath })) — with returnPath
+ *
+ * Both are handled here. Returns { redirectUri, returnPath? }.
+ */
+function decodeState(state: string): { redirectUri: string; returnPath?: string } {
+  const decoded = atob(state);
+  try {
+    const parsed = JSON.parse(decoded) as { redirectUri: string; returnPath?: string };
+    if (parsed && typeof parsed.redirectUri === "string") {
+      return { redirectUri: parsed.redirectUri, returnPath: parsed.returnPath };
+    }
+  } catch {
+    // Not JSON — treat the decoded value as a plain redirectUri string.
+  }
+  return { redirectUri: decoded };
+}
+
 export function registerOAuthRoutes(app: Express) {
   app.get("/api/oauth/callback", async (req: Request, res: Response) => {
     const code = getQueryParam(req, "code");
@@ -20,7 +42,9 @@ export function registerOAuthRoutes(app: Express) {
     }
 
     try {
-      const tokenResponse = await sdk.exchangeCodeForToken(code, state);
+      const { redirectUri, returnPath } = decodeState(state);
+
+      const tokenResponse = await sdk.exchangeCodeForToken(code, redirectUri);
       const userInfo = await sdk.getUserInfo(tokenResponse.accessToken);
 
       if (!userInfo.openId) {
@@ -44,7 +68,8 @@ export function registerOAuthRoutes(app: Express) {
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
 
-      res.redirect(302, "/");
+      // Redirect to the returnPath if provided, otherwise go to the homepage.
+      res.redirect(302, returnPath && returnPath.startsWith("/") ? returnPath : "/");
     } catch (error) {
       console.error("[OAuth] Callback failed", error);
       res.status(500).json({ error: "OAuth callback failed" });
